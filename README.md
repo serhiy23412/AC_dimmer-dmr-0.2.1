@@ -9,7 +9,7 @@
   
 - позволяет параллельную работу нескольких димеров на одной плате Ардуино
 
-Более детально смотрите тех-док: [AC_Dimmer_Docum.docx](https://github.com/serhiy23412/AC_dimmer-dmr-0.2.1/blob/master/AC_Dimmer_Docum.docx)
+Более детальная информация: [AC_Dimmer_Docum.docx](https://github.com/serhiy23412/AC_dimmer-dmr-0.2.1/blob/master/AC_Dimmer_Docum.docx)
 
 
 Пример работы (Demo-video):
