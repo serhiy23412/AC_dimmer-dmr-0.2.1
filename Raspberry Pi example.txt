@@ -1,0 +1,45 @@
+import RPi.GPIO as GPIO
+import time
+import math
+
+PHASE_DFREQ = 100
+DRIVER_MIN = 0.3
+DRIVER_MAX = 0.95
+
+power = DRIVER_MIN
+
+def phase_callback(channel):
+global power
+if power < DRIVER_MIN:
+power = DRIVER_MIN
+if power > DRIVER_MAX:
+power = DRIVER_MAX
+
+time.sleep(math.acos(2.0 * power - 1.0) / (math.pi * PHASE_DFREQ))
+GPIO.output(23, GPIO.HIGH)
+time.sleep(0.00003)
+GPIO.output(23, GPIO.LOW)
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+GPIO.setup(23, GPIO.OUT) # dimmer control
+GPIO.setup(24, GPIO.IN) # phase control
+
+GPIO.add_event_detect(24, GPIO.BOTH, callback=phase_callback, bouncetime=9)
+
+
+try:
+print(power)
+time.sleep(15)
+
+while True:
+power += 0.05
+print(power)
+time.sleep(10)
+except KeyboardInterrupt:
+pass
+
+finally:
+GPIO.remove_event_detect(24)
+GPIO.cleanup()
