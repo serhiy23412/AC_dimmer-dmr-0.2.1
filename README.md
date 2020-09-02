@@ -17,6 +17,8 @@
 
 Библиотека Ардуино: [AC_Dimmer.zip](https://github.com/serhiy23412/AC_dimmer-dmr-0.2.1/blob/master/AC_Dimmer.zip)
 
+Простой пример на Raspberry Pi (by Andy): 
+
 Более детальная информация: [AC_Dimmer_Docum.docx](https://github.com/serhiy23412/AC_dimmer-dmr-0.2.1/blob/master/AC_Dimmer_Docum.docx)
 
 
